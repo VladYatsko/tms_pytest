@@ -1,3 +1,5 @@
+import pytest
+
 from triangle import Triangle
 
 
@@ -30,3 +32,7 @@ def test_square(triangle_declaration, square_res):
 def test_del(triangle_declaration):
     assert triangle_declaration.__del__() is None
     
+
+@pytest.xfail('Incorrect formula implemented.')
+def test_is_right_angled(triangle_declaration):
+    assert triangle_declaration.a ** 2 + triangle_declaration.b ** 2 == triangle_declaration.c ** 2
