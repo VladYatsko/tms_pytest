@@ -59,8 +59,7 @@ class Triangle(object):
         self_sides = sorted([self.a, self.b, self.c])
         other_sides = sorted([other.a, other.b, other.c])
         return self_sides[0] / other_sides[0] == self_sides[1] / other_sides[1] == self_sides[2] / other_sides[2]
-
-    @pytest.xfail('Incorrect formula implemented.')
+    
     def is_right_angled(self) -> bool:
         return self.a ** 2 + self.b ** 2 == self.c ** 2
 
